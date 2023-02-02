@@ -1,0 +1,14 @@
+{% extends "layouts/index.html" %}
+
+{% block content %}
+    <h1>Datos</h1>
+    <hr>
+    <p class="fs-4">Hola {{ name }}</p>
+    {% if products %}
+        <ul class="list-unstyled">
+        {% for product in products %}
+            <li class="fs-4">{{ product }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
