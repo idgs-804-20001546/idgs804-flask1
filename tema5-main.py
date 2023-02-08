@@ -14,7 +14,6 @@ def users():
 @app.route("/pupils")
 def pupils():
     return render_template("pupils.html")
- 
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)

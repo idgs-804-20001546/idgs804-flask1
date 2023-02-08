@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="./../static/assets/css/bootstrap.min.css"
+        />
+    </head>
+    <body>
+        <div class="container py-5">
+            <figure class="text-center mb-4">
+                <img
+                    class="w-50"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cin%C3%A9polis.svg/2560px-Cin%C3%A9polis.svg.png"
+                    alt=""
+                />
+            </figure>
+            <hr />
+            <div class="row">
+                <div class="col-lg-6">
+                    <form action="" method="POST">
+                        <p
+                            class="alert alert-success d-flex justify-content-between"
+                        >
+                            <span>Costo de la boleta</span> <span>12.000</span>
+                        </p>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                placeholder="name@example.com"
+                            />
+                            <label for="name">Nombre</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="buyers"
+                                name="buyers"
+                                placeholder="name@example.com"
+                            />
+                            <label for="buyers">Compradores</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="tickets"
+                                name="tickets"
+                                placeholder="name@example.com"
+                            />
+                            <label for="tickets">Boletas</label>
+                        </div>
+                        <div class="form-check mb-3 form-switch">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                role="switch"
+                                id="cardCinema"
+                                name="cardCinema"
+                            />
+                            <label class="form-check-label" for="cardCinema"
+                                >Cuenta con targeta Cinepolis</label
+                            >
+                        </div>
+                        <div class="text-center mt-5">
+                            <button
+                                type="submit"
+                                class="btn btn-primary btn-lg px-5 fw-semibold rounded-pill"
+                            >
+                                PROCESAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 px-5 py-3">
+                    {% if error %}
+                    <div class="alert alert-danger">
+                        <span>{{ error }}</span>
+                    </div>
+                    {% endif %} {% if saleOrder %}
+                    <div class="shadow p-4 bg-body rounded">
+                        <h2 class="fs-2 lead mb-4">Ticket de Venta</h2>
+                        <hr />
+                        <p class="fs-5 mb-0 d-flex justify-content-between">
+                            <span>Cliente: </span>
+                            <span>{{ saleOrder.name }}</span>
+                        </p>
+                        <p class="fs-5 mb-0 d-flex justify-content-between">
+                            <span>Boletas:</span>
+                            <span>{{ saleOrder.quantity }}</span>
+                        </p>
+                        <p class="fs-5 mb-0 d-flex justify-content-between">
+                            <span>Precio Unitario:</span>
+                            <span>{{ saleOrder.quantity }}</span>
+                        </p>
+                        <hr />
+                        <p class="fs-4 mb-0 d-flex justify-content-between">
+                            <span>Total a pagar:</span>
+                            <span>{{ saleOrder.total }}</span>
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
