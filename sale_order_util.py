@@ -6,9 +6,8 @@ class SaleOrderUtil:
  
 
     def validate(self):
-        if self.saleOrder.quantity < self.saleOrder.buyers * 7:
-            self.error = ''
-        else:
+        self.error = ''
+        if self.saleOrder.quantity > self.saleOrder.buyers * 7:
             self.error = 'No puede comprar más de 7 boletos por persona'
 
     def calculateDiscount(self):
@@ -23,4 +22,8 @@ class SaleOrderUtil:
         else:
             total = float(quantity * unit_price)
 
-        self.saleOrder.total = total
+        if self.saleOrder.cardCinema:
+            total = total * .90
+
+
+        self.saleOrder.total = round(total, 2)

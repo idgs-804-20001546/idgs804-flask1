@@ -26,7 +26,7 @@
                         <p
                             class="alert alert-success d-flex justify-content-between"
                         >
-                            <span>Costo de la boleta</span> <span>12.000</span>
+                            <span>Costo de la boleta</span> <span>12.00</span>
                         </p>
                         <div class="form-floating mb-3">
                             <input
@@ -34,6 +34,7 @@
                                 class="form-control"
                                 id="name"
                                 name="name"
+                                value="{{ name }}"
                                 placeholder="name@example.com"
                             />
                             <label for="name">Nombre</label>
@@ -44,6 +45,7 @@
                                 class="form-control"
                                 id="buyers"
                                 name="buyers"
+                                value="{{ buyers }}"
                                 placeholder="name@example.com"
                             />
                             <label for="buyers">Compradores</label>
@@ -54,6 +56,7 @@
                                 class="form-control"
                                 id="tickets"
                                 name="tickets"
+                                value="{{ quantity }}"
                                 placeholder="name@example.com"
                             />
                             <label for="tickets">Boletas</label>
@@ -64,6 +67,7 @@
                                 type="checkbox"
                                 role="switch"
                                 id="cardCinema"
+                                {{ 'checked' if cardCinema else '' }}
                                 name="cardCinema"
                             />
                             <label class="form-check-label" for="cardCinema"
@@ -95,10 +99,6 @@
                         </p>
                         <p class="fs-5 mb-0 d-flex justify-content-between">
                             <span>Boletas:</span>
-                            <span>{{ saleOrder.quantity }}</span>
-                        </p>
-                        <p class="fs-5 mb-0 d-flex justify-content-between">
-                            <span>Precio Unitario:</span>
                             <span>{{ saleOrder.quantity }}</span>
                         </p>
                         <hr />
