@@ -1,0 +1,11 @@
+{% extends "layouts/exam-layout.html" %} {% block content %}
+
+<h1>Hola, {{ student.name }} {{ student.middlename }} {{ student.lastname }}</h1> 
+<p>Tienes {{ age }} años </p>
+<p>Tu signo zodiacal chino es "{{ zodiac }}"</p>
+<img src="http://www.ccl.uanl.mx/wp-content/uploads/2018/02/06_horoscopo_chino_{{ zodiac }}-300x257.jpg" alt="{{ zodiac }}">
+<hr>
+<p class="fs-3">Tu calificación es de {{ student.result }}</p>
+
+
+{% endblock %}

@@ -4,8 +4,8 @@
 
 <form action="/check" method="POST">
     {% for question in questions %}
-    <p class="fs-3 lead mb-3">{{ question.question }}</p>
-    <div class="ms-3">
+    <p class="fs-3 lead mt-4 mb-3">{{ question.question }}</p>
+    <div class="ms-3 pb-5">
         {% for id, anwser in question.responses %}
         <div class="form-check form-check-inline">
             <input

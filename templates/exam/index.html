@@ -1,4 +1,6 @@
-{% extends "layouts/exam-layout.html" %} {% block content %}
+{% extends "layouts/exam-layout.html" %} 
+
+{% block content %}
 <h1>Datos Personales</h1>
 <hr />
 <form action="/" method="POST">
@@ -32,15 +34,43 @@
         />
         <label for="lastname">Apellido Materno</label>
     </div>
-    <div class="form-floating mb-3">
+
+    <label>Fecha de Nacimiento</label>
+    <div class="row row-cols-3">
+
+    <div class="form-floating">
         <input
-            type="date"
+            type="text"
             class="form-control"
-            name="born_at"
-            id="born_at"
+            name="day"
+            id="day"
             placeholder=""
         />
-        <label for="born_at">Fecha</label>
+        <label for="day">Día</label>
+    </div>
+
+    <div class="form-floating">
+        <input
+            type="text"
+            class="form-control"
+            name="month"
+            id="month"
+            placeholder=""
+        />
+        <label for="month">Mes</label>
+    </div>
+
+    <div class="form-floating">
+        <input
+            type="text"
+            class="form-control"
+            name="year"
+            id="year"
+            placeholder=""
+        />
+        <label for="year">Año</label>
+    </div>
+
     </div>
 
     <label> Sexo </label>
